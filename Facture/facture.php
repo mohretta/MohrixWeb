@@ -1,5 +1,15 @@
 <?php
-  $facture = [
+   session_start();
+   $facture=[];
+   if(isset($_SESSION['facture']))
+   {
+    $facture=$_SESSION['facture'];
+   }
+ 
+   else
+   {
+ 
+   $facture = [
     [ 'description' => 'steak haché',
       'prixUnitaire' => 6.00,
       'quantite' => 1
@@ -29,6 +39,9 @@
       'quantite' => 2
     ]
   ];
+}
+
+  $_SESSION['facture']=$facture;
 ?>
 <!doctype html>
 <html lang="fr">
